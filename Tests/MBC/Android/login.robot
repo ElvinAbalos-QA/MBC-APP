@@ -36,5 +36,6 @@ Login positive test case
     Handle Modals       ${MODAL_LOGGED_IN_ANOTHER_DEVICE}       ${USE_HERE_BUTTON}
     ${PASSED}=      Run Keyword And Return Status       Wait Until Page Contains Element        ${VERIFICATION_MODAL}
     Run Keyword If       '${PASSED}' == 'True'      Handle Verification
-    Game Tutorial   //android.view.ViewGroup[@index=3]      # FINISH TUTORIAL BUTTON
+#    Remove this for now Game Tutorial
+#    Game Tutorial   //android.view.ViewGroup[@index=3]      # FINISH TUTORIAL BUTTON
     Click The Logout Button     ${LOGOUT_TAB}

@@ -21,7 +21,7 @@ ${LOGIN_FAILED_INVALID_CREDENTIALS_IOS}     (//XCUIElementTypeOther[@name="ERROR
 #*** APPLICATION Variables ***
 ${MBC-APPLICATION-ID}              com.mbcapp
 ${MBC-APPLICATION-ACTIVITY}        ${MBC-APPLICATION-ID}.MainActivity
-${ADB_NAME}     192.168.8.104:1111
+${ADB_NAME}     192.168.0.24:1234
 #${ADB_NAME}     4SPRMFUGIRBQ4PKR
 
 #*** Login Page ***
@@ -353,8 +353,9 @@ Gmail Sign Up
 
 Tap The Skip Tutorial
     [Arguments]    ${SKIP_TUTORIAL}
-    Wait Until Page Contains Element        ${SKIP_TUTORIAL}
-    Tap The Element     ${SKIP_TUTORIAL}
+#    Wait Until Page Contains Element        ${SKIP_TUTORIAL}
+#    Tap The Element     ${SKIP_TUTORIAL}
+    Log To Console    'Not Displaying the Game Tutorial'
 
 Forgot Password IOS
     Tap The Element                             ${FORGOT PASSWORD TEXT - IOS}
@@ -370,6 +371,7 @@ Input User Password
     Run Keyword Until Success       Input Password        ${FIELD}     ${PASSWORD}
 
 Handle Location and Notification IOS
+    Sleep    5
     Handle Modals    //XCUIElementTypeAlert[@name="Allow “MBC PaPremyo” to use your location?"]     //XCUIElementTypeButton[@name="Allow Once"]
     Handle Modals    //XCUIElementTypeAlert[@name="“MBC PaPremyo” Would Like to Send You Notifications"]    //XCUIElementTypeButton[@name="Allow"]
 

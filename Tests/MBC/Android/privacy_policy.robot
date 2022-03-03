@@ -15,8 +15,7 @@ Privacy Policy test case
     Handle Modals       ${MODAL_LOGGED_IN_ANOTHER_DEVICE}       ${USE_HERE_BUTTON}
     ${PASSED}=      Run Keyword And Return Status       Wait Until Page Contains Element        ${VERIFICATION_MODAL}
     Run Keyword If       '${PASSED}' == 'True'      Handle Verification
-    Wait Until Page Contains Element        ${SKIP_TUTORIAL}
-    Tap The Element     ${SKIP_TUTORIAL}
+    Tap The Skip Tutorial    ${SKIP_TUTORIAL}
     Sleep    5
     Swipe    5    173    176    178         # to view the sidenav
     Swipe    205    1122    207    553      # swipe to view the Terms of Use
